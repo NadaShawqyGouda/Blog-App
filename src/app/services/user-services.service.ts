@@ -16,4 +16,8 @@ export class UserServicesService {
   getSinglePost(id:any){
     return this.httpClient.get(this.URL+'posts/find/'+id)
   }
+
+  login(data:any){
+    return this.httpClient.post(this.URL+ 'auth/login', data)
+  }
 }
