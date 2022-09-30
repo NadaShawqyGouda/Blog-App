@@ -20,4 +20,8 @@ export class UserServicesService {
   login(data:any){
     return this.httpClient.post(this.URL+ 'auth/login', data)
   }
+
+  register(data:any){
+    return this.httpClient.post(this.URL+'auth/register', data)
+  }
 }
