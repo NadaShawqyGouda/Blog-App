@@ -24,7 +24,8 @@ export class LoginComponent implements OnInit {
     if(data.valid){
       this._userService.login(data.value).subscribe({
         next:(res:any)=>{
-          localStorage.setItem('token', res.accessToken);
+          localStorage.setItem('authorization', `Bearer ${res.accessToken}`);
+          localStorage.setItem('username', res.username);
           const isAdmin = res.accessToken;
           if(isAdmin){
             this.router.navigate(['/home'])

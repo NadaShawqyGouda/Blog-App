@@ -24,4 +24,8 @@ export class UserServicesService {
   register(data:any){
     return this.httpClient.post(this.URL+'auth/register', data)
   }
+
+  addPost(data:any){
+    return this.httpClient.post(this.URL+'posts' , data)
+  }
 }

@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <form [formGroup]="postForm">
+        <div class="form-group">
+            <label>image</label> 
+            <input class="form-control" type="file"  (change)="onChange($event)"/>
+            <img src="{{base64}}" alt="" *ngIf="img"/>
+        </div>
+        <div class="form-Group">
+            <label>title</label>
+            <input formControlName="title" placeholder="title" type="text"/>
+        </div>
+        <div class="form-Group">
+            <label>description</label>
+            <textarea formControlName="desc" placeholder="description"></textarea>
+        </div>
+        <div class="form-Group">
+            <label>category</label>
+            <select formControlName="categories" multiple>
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="opel">Opel</option>
+                <option value="audi">Audi</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="addPost()">Submit</button>
+    </form>
+</div>
+<app-footer></app-footer>
