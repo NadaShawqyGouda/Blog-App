@@ -28,4 +28,16 @@ export class UserServicesService {
   addPost(data:any){
     return this.httpClient.post(this.URL+'posts' , data)
   }
+
+  isLogged(){
+    if(localStorage.getItem('token')){
+      return true
+    }else{
+      return false
+    }
+  }
+
+  fetchToken(){
+    return localStorage.getItem('token')
+  }
 }

@@ -45,7 +45,7 @@ export class AddPostComponent implements OnInit {
     const model = this.postForm.value;
     this._userService.addPost(model).subscribe({
       next:(data)=>{console.log(data); this.router.navigate(['/home'])},
-      error:(err)=>{console.log(err)}
+      error:(err)=>{'it is'+console.log(err)}
     })
   }
 
