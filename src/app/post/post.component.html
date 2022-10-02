@@ -7,5 +7,15 @@
         <div class="desc">{{post.desc}}</div>
         <div class="date">{{post.createdAt}}</div>
     </div>
+    <button class="btn btn-primary">add comment</button>
+    <form [formGroup]="commentForm">
+        <input type="text" formControlName="content" placeholder="comment"/>
+        <button class="btn btn-primary" (click)="addComment()">puplish</button>
+    </form>
+    <div class="comments" *ngFor="let comment of comments">
+        <img src="{{comment.userImg}}" class="userPic" />
+        <div class="userName">{{comment.username}}</div>
+        <div class="content">{{comment.content}}</div>
+    </div>
 </div>
 <app-footer></app-footer>

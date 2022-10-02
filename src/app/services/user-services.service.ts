@@ -29,6 +29,14 @@ export class UserServicesService {
     return this.httpClient.post(this.URL+'posts' , data)
   }
 
+  createComment(data:any){
+    return this.httpClient.post(this.URL+'comments' , data)
+  }
+
+  getPostComments(postId:any){
+    return this.httpClient.get(this.URL+'comments?qPost='+postId)
+  }
+
   isLogged(){
     if(localStorage.getItem('token')){
       return true

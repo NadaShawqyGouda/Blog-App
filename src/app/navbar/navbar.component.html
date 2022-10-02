@@ -9,13 +9,13 @@
         <li class="nav-item active">
           <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!(_userService.isLogged())">
           <a class="nav-link" routerLink="/login">Login</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!(_userService.isLogged())">
             <a class="nav-link" routerLink="/register">Signup</a>
           </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="_userService.isLogged()">
             <a class="nav-link" (click)="logout()">Logout</a>
           </li>
       </ul>
@@ -25,3 +25,4 @@
       </form>
     </div>
   </nav>
+  
