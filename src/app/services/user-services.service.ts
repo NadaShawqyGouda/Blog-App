@@ -10,7 +10,7 @@ export class UserServicesService {
   constructor(public httpClient:HttpClient) { }
 
   getposts(){
-    return this.httpClient.get(this.URL+'posts');
+    return this.httpClient.get(this.URL +'posts');
   }
 
   getSinglePost(id:any){

@@ -1,0 +1,7 @@
+{
+    "/api/*":{
+        "target" : "https://nada-blog-api.herokuapp.com",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}
