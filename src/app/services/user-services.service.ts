@@ -29,12 +29,20 @@ export class UserServicesService {
     return this.httpClient.post(this.URL+'posts' , data)
   }
 
+  updatePost(data:any){
+    return this.httpClient.put(this.URL+'posts' , data)
+  }
+
+  deletePost(id:any){
+    return this.httpClient.delete(this.URL + 'posts/' + id)
+  }
+
   createComment(data:any){
     return this.httpClient.post(this.URL+'comments' , data)
   }
 
   getPostComments(postId:any){
-    return this.httpClient.get(this.URL+'comments?qPost='+postId)
+    return this.httpClient.get(this.URL+'comments?postId='+postId)
   }
 
   isLogged(){

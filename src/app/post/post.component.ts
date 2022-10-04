@@ -41,7 +41,7 @@ export class PostComponent implements OnInit {
 
   getComments(){
     this._userServices.getPostComments(this.id).subscribe({
-      next:(res)=>{console.log(res); this.comments=res},
+      next:(res)=>{console.log(this.id); this.comments=res},
       error:(err)=>{console.log(err)}
     })
   }
@@ -52,6 +52,14 @@ export class PostComponent implements OnInit {
       next:(data)=>{console.log(data);this.getComments()},
       error:(err)=>{console.log(err)}
     })
+  }
+
+  updatePost(){
+    
+  }
+
+  deletePost(){
+
   }
 
 }
