@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserServicesService } from '../services/user-services.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class PostComponent implements OnInit {
   newComment:any;
   userImage:any = ""
 
-  constructor(private route:ActivatedRoute, public _userServices:UserServicesService, public Build:FormBuilder) {
+  constructor(private route:ActivatedRoute, private router:Router , public _userServices:UserServicesService, public Build:FormBuilder) {
     this.id = this.route.snapshot.paramMap.get("id")
   }
 
@@ -58,8 +58,11 @@ export class PostComponent implements OnInit {
     
   }
 
-  deletePost(){
-
+  deletePost(id:any){
+    this._userServices.deletePost(id).subscribe({
+      next:(res)=>{console.log(res); this.router.navigate(['/home'])},
+      error:(err)=>{console.log(err)}
+    })
   }
 
 }
